@@ -1,0 +1,32 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>counter</title>
+        <meta charset="UTF-8">
+        <script>
+            function increase(){
+                let counter = document.getElementById("counter").value;
+                let result = document.getElementById("result").innerText;
+                result = Number(result) + Number(counter)
+                document.getElementById("result").innerHTML = result
+            }
+
+            function decrease(){
+                let counter = document.getElementById("counter").value;
+                let result = document.getElementById("result").innerText;
+                result = Number(result) - Number(counter)
+                document.getElementById("result").innerHTML = result
+            }
+        </script>
+    </head>
+    <body>
+        数値
+        <input id="counter">
+        <button onclick="increase()">増やす</button>
+        <button onclick="decrease()">減らす</button>
+        <h3>
+            結果
+        </h3>
+        <p id="result">0</p>
+    </body>
+</html>

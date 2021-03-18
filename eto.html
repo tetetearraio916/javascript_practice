@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <script>
+            function calc(){
+                let e = ""
+                let j = ""
+                let year = document.getElementById("year").value
+                let eto = year%10
+                let juunisi = year%12
+                switch (eto){
+                    case 0:
+                        e = "庚"; break;
+                    case 1:
+                        e = "辛"; break;
+                    case 2:
+                        e = "壬"; break;
+                    case 3:
+                        e = "癸"; break;
+                    case 4:
+                        e = "甲"; break;
+                    case 5:
+                        e = "乙"; break;
+                    case 6:
+                        e = "丙"; break;
+                    case 7:
+                        e = "丁"; break;
+                    case 8:
+                        e = "戊"; break;
+                    case 9:
+                        e = "己"; break;
+                }
+
+                switch (juunisi){
+                    case 0:
+                        j = "申"; break;
+                    case 1:
+                        j = "酉"; break;
+                    case 2:
+                        j = "戌"; break;
+                    case 3:
+                        j = "亥"; break;
+                    case 4:
+                        j = "子"; break;
+                    case 5:
+                        j = "丑"; break;
+                    case 6:
+                        j = "寅"; break;
+                    case 7:
+                        j = "卯"; break;
+                    case 8:
+                        j = "辰"; break;
+                    case 9:
+                        j = "巳"; break;
+                    case 10:
+                        j = "午"; break;
+                    case 11:
+                        j = "未"; break;
+                }
+                document.getElementById("y").innerHTML = year
+                document.getElementById("e").innerHTML = e + j
+            }
+        </script>
+    </head>
+    <body>
+        <h2><span id="y"></span>年の干支は<span id="e"></span></h2>
+        <p>
+            <input id="year" value="2021">
+            <button onclick="calc()">計算</button>
+        </p>
+    </body>
+</html>
