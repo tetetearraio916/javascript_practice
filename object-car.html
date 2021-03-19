@@ -1,0 +1,49 @@
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        let car = {
+            speed: 60,
+            gasoline: 40,
+            accelerate: function (){
+                this.speed += 1
+                this.gasoline -= 1
+            },
+            decelerate: function (){
+                this.speed -= 1
+                this.gasoline -= 0.5
+            },
+            drive: function (d){
+                return d/this.speed
+            }
+        }
+        function acCar(){
+            let d = document.getElementById("distance").value
+            car.speed = document.getElementById("speed").value
+            car.gasoline = document.getElementById("gasoline").value
+            car.accelerate()
+            document.getElementById("speed").textContent = car.speed
+            document.getElementById("gasoline").textContent = car.gasoline
+            document.getElementById("times").textContent = car.drive(d)
+        }
+        function dcCar(){
+            let d = document.getElementById("distance").value
+            car.speed = document.getElementById("speed").value
+            car.gasoline = document.getElementById("gasoline").value
+            car.decelerate()
+            document.getElementById("speed").textContent = car.speed
+            document.getElementById("gasoline").textContent = car.gasoline
+            document.getElementById("times").textContent = car.drive(d)
+        }
+
+    </script>
+</head>
+<body>
+    <input id="speed" value="60">
+    <input id="gasoline" value="40">
+    <input id="distance" value="100">
+    <button onclick="acCar()">加速</button>
+    <button onclick="dcCar()">減速</button>
+    <p>想定時間:<span id="times"></span> </p>
+</body>
+</html>
