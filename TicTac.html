@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #board {
+            background-color: black;
+        }
+        td.cell {
+            background-color: green;
+            width: 30px;
+            height: 30px;
+        }
+    </style>
+    <script>
+        let k = 0
+        function init(){
+            let b = document.getElementById("board")
+            for (let i = 0; i < 3; i++ ){
+                let tr = document.createElement("tr")
+                for (let j = 0; j < 3; j++){
+                    let td = document.createElement("td")
+                    td.className = "cell"
+                    td.id = "cell" + i + j
+                    td.onclick = clicked;
+                    tr.appendChild(td)
+                }
+                b.appendChild(tr)
+            }
+
+        }
+        function clicked(e){
+            let takeTurns = document.getElementById(e.target.id)
+            if (k%2){
+                takeTurns.textContent = "×"
+            }else {
+                takeTurns.textContent = "○"
+            }
+            k++
+        }
+    </script>
+</head>
+<body onload="init()">
+    <table id="board"></table>
+    <h2 id="info"></h2>
+</body>
+</html>
