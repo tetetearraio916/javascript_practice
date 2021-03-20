@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script>
+        let ctx;
+        function  init(){
+            let canvas = document.getElementById("canvas")
+            ctx = canvas.getContext("2d")
+
+            ctx.fillStyle = "#00ff00"
+            ctx.beginPath()
+            ctx.fillRect(10, 10, 1000, 500)
+
+            ctx.strokeStyle = "#000000"
+            ctx.beginPath()
+            leftGoal(10, 176)
+            rightGoal(1010,176)
+
+            ctx.beginPath()
+            ctx.arc(505,260,83,0,2*Math.PI)
+            ctx.stroke()
+
+            ctx.beginPath()
+            ctx.moveTo(505,10)
+            ctx.lineTo(505,510)
+            ctx.stroke()
+
+        }
+
+        function leftGoal(x,y){
+            ctx.moveTo(x,y)
+            ctx.lineTo(x + 100 , y)
+            ctx.lineTo(x + 100, y + 166)
+            ctx.lineTo(x, y + 166)
+            ctx.stroke()
+        }
+
+        function rightGoal(x,y){
+            ctx.moveTo(x,y)
+            ctx.lineTo(x - 100 , y)
+            ctx.lineTo(x - 100, y + 166)
+            ctx.lineTo(x, y + 166)
+            ctx.stroke()
+        }
+
+    </script>
+
+</head>
+<body onload="init()">
+<canvas id="canvas" width="1010" height="1000"></canvas>
+</body>
+</html>
